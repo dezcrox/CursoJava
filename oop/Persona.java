@@ -5,6 +5,21 @@ class Persona {
     int edad;
     char genero;
 
+    Persona(){
+        System.out.println("Esto es un constructor");
+    }
+
+    Persona(String n, int ed, char g){
+        nombre = n;
+        edad = ed;
+        genero = g;
+    }
+
+    //Metodo - acciones
+    void jugarVideojuegos(Persona p){
+        System.out.println(nombre+" esta jugando con "+p.nombre);
+    }
+
     //metodos - acciones
     void imprimirInformacion(){
         System.out.println("Nombre: "+nombre);
@@ -13,10 +28,7 @@ class Persona {
     }
 
     public static void main(String args[]){
-        Persona p=new Persona();
-        p.nombre = "Alex";
-        p.edad = 32;
-        p.genero = 'M';
+        Persona p=new Persona("Alex", 32, 'M');
         p.imprimirInformacion();
 
         Persona p1=new Persona();
@@ -24,6 +36,7 @@ class Persona {
         p1.edad=51;
         p1.genero='M';
         p1.imprimirInformacion();
+        p.jugarVideojuegos(p1);
     }
 
 }
